@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JABI - شركة تصميم مواقع إلكترونية احترافية للشركات المحلية. نقدم تصاميم عصرية وحلول ويب مفتوحة المصدر.">
+    <meta name="keywords" content="تصميم مواقع, ويب ديزاين, HTML, CSS, شركات محلية">
+    <title>JABI - تصميم مواقع احترافية</title>
+    <script type="application/ld+json">
+   
+    </script>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ===== قسم الرأس (Header) ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text">JABI <span class="logo-subtitle">تصميم ويب احترافي</span></span>
+                
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><button id="darkModeToggle" class="nav-link dark-mode-nav-btn" title="الوضع الداكن/الفاتح">🌙</button></li>
+                    <li><a href="#hero" class="nav-link">الرئيسية</a></li>
+                    <li><a href="#about" class="nav-link">من نحن</a></li>
+                    <li><a href="#services" class="nav-link">الخدمات</a></li>
+                    <li><a href="#why-us" class="nav-link">لماذا نحن</a></li>
+                    <li><a href="blog.html" class="nav-link">المدونة</a></li>
+                    <li><a href="#contact" class="nav-link">تواصل معنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== قسم البداية (Hero Section) ===== -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="highlight">JABI </span> شريكك نحو <br><span id="typed-text"></span>
+            </h1>
+            <p class="hero-subtitle">نصمم مواقع إلكترونية عصرية واحترافية تلهم عملائك وتنمي أعمالك</p>
+            <a href="#services" class="cta-button">اكتشف خدماتنا</a>
+        </div>
+        <div class="hero-background"></div>
+    </section>
+
+    <!-- ===== قسم نبذة عنا (About Us) ===== -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>من نحن؟</h2>
+                <div class="underline"></div>
+            </div>
+            <p class="about-text">
+                في <strong>JABI</strong> ، نؤمن بأن موقعك الإلكتروني هو سفير علامتك التجارية الأول. نحن فريق من المصممين والمطورين الشغوفين بالابتكار والجودة، نكرس خبرتنا لتقديم حلول تصميم ويب مفتوحة المصدر  (HTML & CSS)، تضمن لك السهولة في التعديل والتحكم الكامل، مع التركيز على الأداء السريع والتصميم المتجاوب الذي يعمل بكفاءة على جميع الأجهزة.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== قسم الخدمات والتسعيرات (Services & Pricing) ===== -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>باقاتنا المتميزة</h2>
+                <p class="section-subtitle">اختر الباقة التي تناسب حجم وطموح عملك</p>
+                <div class="underline"></div>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- الباقة الأساسية -->
+                <div class="pricing-card basic">
+                    <div class="card-header">
+                        <h3>الباقة الأساسية</h3>
+                        <span class="badge">للبداية</span>
+                    </div>
+                    <div class="price">
+                        <span class="currency">ر.س</span>
+                        <span class="amount">1,500</span>
+                        <span class="period">/ المشروع</span>
+                    </div>
+                    <ul class="features-list">
+                        <li><span class="checkmark">✓</span> تصميم عصري لصفحة واحدة (Landing Page)</li>
+                        <li><span class="checkmark">✓</span> تصميم متجاوب (Responsive Design)</li>
+                        <li><span class="checkmark">✓</span> معرض أعمال بسيط (5-7 صور)</li>
+                        <li><span class="checkmark">✓</span> نموذج تواصل بسيط</li>
+                        <li><span class="checkmark">✓</span> تسليم الكود المصدري (HTML/CSS)</li>
+                        <li><span class="checkmark">✓</span> دعم فني لمدة شهر واحد</li>
+                    </ul>
+                    <button class="card-button">ابدأ الآن</button>
+                </div>
+
+                <!-- الباقة المتقدمة -->
+                <div class="pricing-card advanced">
+                    <div class="card-header">
+                        <h3>الباقة المتقدمة</h3>
+                        <span class="badge premium">الأكثر طلباً</span>
+                    </div>
+                    <div class="price">
+                        <span class="currency">ر.س</span>
+                        <span class="amount">3,750</span>
+                        <span class="period">/ المشروع</span>
+                    </div>
+                    <ul class="features-list">
+                        <li><span class="checkmark">✓</span> تصميم احترافي لـ 5-7 صفحات داخلية</li>
+                        <li><span class="checkmark">✓</span> تصميم متجاوب واحترافي</li>
+                        <li><span class="checkmark">✓</span> معرض أعمال متقدم (Portfolio)</li>
+                        <li><span class="checkmark">✓</span> تأثيرات بصرية وحركية متقدمة</li>
+                        <li><span class="checkmark">✓</span> نموذج جمع بريد إلكتروني متكامل</li>
+                        <li><span class="checkmark">✓</span> تسليم الكود المصدري (HTML/CSS)</li>
+                        <li><span class="checkmark">✓</span> دعم فني لمدة 3 أشهر</li>
+                    </ul>
+                    <button class="card-button advanced-btn">ابدأ الآن</button>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <p>لا تجد الباقة المناسبة؟ <strong>تواصل معنا لعرض مخصص</strong></p>
+                <a href="#contact" class="cta-button secondary">ابدأ مشروعك الآن</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== قسم الإحصائيات (Stats Counter) ===== -->
+    <section id="stats" class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="150">0</h3>
+                    <p class="stat-label">عميل سعيد</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="200">0</h3>
+                    <p class="stat-label">مشروع مكتمل</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="5">0</h3>
+                    <p class="stat-label">سنوات خبرة</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number" data-target="98">0</h3>
+                    <p class="stat-label">نسبة رضا العملاء</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== قسم لماذا JABI؟ (Why Choose Us) ===== -->
+    <section id="why-us" class="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>لماذا تختار <strong>JABI</strong>؟</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3>تصميم مفتوح المصدر</h3>
+                    <p>نمنحك الكود المصدري كاملاً (HTML & CSS) لتعديل سهل ومستقبلي بدون قيود</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3>جودة احترافية بسعر تنافسي</h3>
+                    <p>نقدم جودة شركات كبرى بأسعار مناسبة للشركات المحلية والناشئة</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+                        </svg>
+                    </div>
+                    <h3>إبداع بصري وحركي</h3>
+                    <p>نستخدم أحدث التأثيرات البصرية والحركية لإبهار عملائك وتحسين التجربة</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="2" y1="20" x2="22" y2="20"/>
+                        </svg>
+                    </div>
+                    <h3>تصميم متجاوب</h3>
+                    <p>موقعك يبدو مثالياً على أي جهاز (هاتف، حاسوب لوحي، مكتبي)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== قسم الأسئلة الشائعة (FAQ) ===== -->
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">الأسئلة الشائعة</h2>
+                <p class="section-subtitle">إجابات واضحة لأكثر استفسارات عملائنا شيوعاً.</p>
+                <div class="underline"></div>
+            </div>
+
+            <div class="faq-container">
+                <!-- السؤال 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ما هي المدة الزمنية لتصميم موقع إلكتروني؟
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>تعتمد المدة على نوع الباقة. الباقة الأساسية تستغرق عادةً من 7 إلى 10 أيام عمل، بينما الباقة المتقدمة تتطلب من 15 إلى 25 يوم عمل، وذلك بعد استلام جميع المحتويات منك.</p>
+                    </div>
+                </div>
+
+                <!-- السؤال 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        هل يمكنني تعديل محتوى الموقع بنفسي لاحقاً؟
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>بالتأكيد. جميع المواقع التي نصممها مفتوحة المصدر، ونقدم لك دليلاً مبسطاً لاستخدام برنامج VS Code لتعديل النصوص والصور الأساسية بسهولة تامة.</p>
+                    </div>
+                </div>
+
+                <!-- السؤال 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        هل تشمل التسعيرة خدمة الاستضافة والدومين؟
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>التسعيرة المعروضة هي لتصميم وتطوير الموقع فقط. يمكننا مساعدتك في اختيار أفضل خطط الاستضافة والدومين المناسبة لميزانيتك واحتياجاتك.</p>
+                    </div>
+                </div>
+
+                <!-- السؤال 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ماذا لو احتجت إلى ميزات إضافية في المستقبل؟
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>نحن نقدم خدمات تطوير مستمرة. يمكنك التواصل معنا في أي وقت لمناقشة الإضافات المستقبلية وسنقدم لك عرض سعر مناسب.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- ===== قسم التواصل عبر واتساب (WhatsApp Contact Section) ===== -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-content">
+                    <div class="section-header">
+                        <h2>تواصل <strong>مباشر</strong> عبر واتساب</h2>
+                        <p class="section-subtitle">للتواصل السريع والاستفسارات، اضغط على الزر أدناه لبدء محادثة واتساب.</p>
+                        <div class="underline"></div>
+                    </div>
+
+                    <div class="whatsapp-contact-box">
+                        <a href="https://wa.me/966501234567?text=مرحباً،%20أود%20الاستفسار%20عن%20خدماتكم%20في%20تصميم%20المواقع." target="_blank" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
+                        </a>
+                        <p class="whatsapp-note">يرجى **تغيير رقم الهاتف** في الرابط إلى رقمك الخاص قبل الإطلاق.</p>
+                    </div>
+                </div>
+
+                <!-- قسم جمع البريد الإلكتروني (تم الإبقاء عليه للنشرة البريدية) -->
+                <div class="newsletter-section">
+                    <h3>اشترك في نشرتنا البريدية</h3>
+                    <p>احصل على أحدث نصائح التصميم والتسويق الرقمي مباشرة في بريدك الوارد</p>
+                    <form class="newsletter-form" id="newsletterForm" action="thank-you.html">
+                        <input type="email" placeholder="أدخل بريدك الإلكتروني" required>
+                        <button type="submit" class="newsletter-btn">اشترك</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== تذييل الصفحة (Footer) ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>JABI</h4>
+                    <p>شريكك نحو التميز الرقمي</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>الروابط السريعة</h4>
+                    <ul>
+                        <li><a href="#hero">الرئيسية</a></li>
+                        <li><a href="#about">من نحن</a></li>
+                        <li><a href="#services">الخدمات</a></li>
+                        <li><a href="index.html#contact">اتصل بنا</a></li>
+                        <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>تابعنا</h4>
+                    <div class="social-links">
+                         <a href="#" class="social-icon" title="فيسبوك">
+                                <picture><source srcset="icons/Facebook.webp" type="image/webp"><img src="icons/Facebook.png" alt="فيسبوك"></picture>
+                            </a>
+                            <a href="#" class="social-icon" title="تويتر">  
+                                <picture><source srcset="icons/X.webp" type="image/webp"><img src="icons/X.png" alt="تويتر"></picture>
+                            </a>
+                            <a href="#" class="social-icon" title="إنستاجرام">
+                                <picture><source srcset="icons/Instagram.webp" type="image/webp"><img src="icons/Instagram.png" alt="إنستاجرام"></picture>  
+                            </a>
+                            <a href="#" class="social-icon" title="لينكدإن">
+                                <picture><source srcset="icons/LinkedIn.webp" type="image/webp"><img src="icons/LinkedIn.png" alt="لينكدإن"></picture>
+                            </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 <strong>JABI</strong> جميع الحقوق محفوظة </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- أزرار التواصل العائمة (Floating Contact Buttons) -->
+    <div class="floating-contact">
+        <a href="tel:+966573781148" class="contact-btn phone" title="اتصل بنا">📞</a>
+        <a href="https://wa.me/966573781148" class="contact-btn whatsapp" title="تواصل واتساب"><img src="icons/whatsapp_480px.png"></a>
+    </div>
+
+    <!-- صفحة التحميل المخصصة (Preloader) -->
+    <div id="preloader">
+        <div class="loader">JABI</div>
+    </div>
+
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    
+    <script src="./script.js"></script>
+</body>
+</html>

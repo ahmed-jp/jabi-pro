@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="أحدث المقالات والنصائح في تصميم المواقع، التسويق الرقمي، والتحول الرقمي للشركات.">
+    <title>JABI - مدونة التصميم والتسويق الرقمي</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* إضافة تنسيقات خاصة بالمدونة هنا مؤقتاً */
+        .blog-header {
+            padding: 100px 0 50px;
+            text-align: center;
+            background-color: var(--secondary-color);
+        }
+        .blog-header h1 {
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+        .blog-header p {
+            font-size: 18px;
+            color: var(--text-light);
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            padding: 50px 0;
+        }
+        .post-card {
+            background-color: var(--primary-color);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        .post-card-image {
+            width: 100%;
+            height: 200px;
+            background-color: var(--border-color); /* صورة وهمية */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+        .post-card-content {
+            padding: 25px;
+        }
+        .post-card-content h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+        .post-card-content p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .read-more {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .read-more:hover {
+            color: var(--accent-dark);
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== قسم الرأس (Header) - مأخوذ من index.html ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text">JABI <span class="logo-subtitle">تصميم ويب احترافي</span></span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><button id="darkModeToggle" class="nav-link dark-mode-nav-btn" title="الوضع الداكن/الفاتح">🌙</button></li>
+                    <li><a href="index.html#hero" class="nav-link">الرئيسية</a></li>
+                    <li><a href="index.html#about" class="nav-link">من نحن</a></li>
+                    <li><a href="index.html#services" class="nav-link">الخدمات</a></li>
+                    <li><a href="index.html#why-us" class="nav-link">لماذا نحن</a></li>
+                    <li><a href="blog.html" class="nav-link">المدونة</a></li>
+                    <li><a href="index.html#contact" class="nav-link">تواصل معنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== قسم المدونة الرئيسي (Blog Header) ===== -->
+    <section class="blog-header">
+        <div class="container">
+            <h1>مدونة JABI</h1>
+            <p>مقالات ونصائح متخصصة في تصميم المواقع، الويب، والتسويق الرقمي.</p>
+        </div>
+    </section>
+
+    <!-- ===== شبكة المقالات (Blog Grid) ===== -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-post">
+                    <a href="post-template.html" class="post-link">
+                <!-- مقالة وهمية 1 -->
+                <div class="post-card">
+                    <div class="post-card-image">صورة المقالة 1</div>
+                    <div class="post-card-content">
+                        <h3>أهمية التصميم المتجاوب لموقعك</h3>
+                        <p>في عصر الهواتف الذكية، لم يعد التصميم المتجاوب خياراً بل ضرورة. تعرف على كيفية تأثيره على تجربة المستخدم وتصنيف موقعك في محركات البحث.</p>
+                        <a href="post-template.html" class="read-more">اقرأ المزيد</a>
+                    </div>
+                </div>
+
+                <!-- مقالة وهمية 2 -->
+                <div class="post-card">
+                    <div class="post-card-image">صورة المقالة 2</div>
+                    <div class="post-card-content">
+                        <h3>كيف تختار الألوان المناسبة لعلامتك التجارية؟</h3>
+                        <p>الألوان هي لغة المشاعر. اكتشف سيكولوجية الألوان وكيف يمكن لمزيج الألوان الهادئ أن يعكس احترافية شركتك ويجذب العملاء.</p>
+                        <a href="post-template.html" class="read-more">اقرأ المزيد</a>
+                    </div>
+                </div>
+
+                
+            </div>
+            <!-- يمكن إضافة المزيد من المقالات هنا -->
+        </div>
+    </section>
+
+    <!-- ===== تذييل الصفحة (Footer) - مأخوذ من index.html ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>JABI</h4>
+                    <p>شريكك نحو التميز الرقمي</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>الروابط السريعة</h4>
+                    <ul>
+                        <li><a href="index.html#hero">الرئيسية</a></li>
+                        <li><a href="index.html#about">من نحن</a></li>
+                        <li><a href="index.html#services">الخدمات</a></li>
+                        <li><a href="index.html#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>تابعنا</h4>
+                    <div class="social-links">
+                            <a href="#" class="social-icon" title="فيسبوك">
+                                <img src="icons/Facebook.png">
+                            </a>
+                            <a href="#" class="social-icon" title="تويتر">  
+                                <img src="icons/X.png">
+                            </a>
+                            <a href="#" class="social-icon" title="إنستاجرام">
+                                <img src="icons/Instagram.png">  
+                            </a>
+                            <a href="#" class="social-icon" title="لينكدإن">
+                                <img src="icons/LinkedIn.png">
+                            </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 <strong>JABI</strong> جميع الحقوق محفوظة </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- أزرار التواصل العائمة (Floating Contact Buttons) -->
+    <div class="floating-contact">
+        <a href="tel:+966573781148" class="contact-btn phone" title="اتصل بنا">📞</a>
+        <a href="https://wa.me/966573781148" class="contact-btn whatsapp" title="تواصل واتساب"><img src="icons/whatsapp_480px.png"></a>
+    </div>
+
+    <!-- صفحة التحميل المخصصة (Preloader) -->
+    <div id="preloader">
+        <div class="loader">JABI</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
