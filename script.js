@@ -24,78 +24,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// ===== تم إلغاء معالجة نموذج التواصل (Contact Form) واستبداله بزر واتساب =====
-
-// ===== معالجة نموذج النشرة البريدية (Newsletter Form) =====
+// ===== التكوين العام للنماذج (Forms Config) =====
+const contactForm = document.getElementById('contactForm');
 const newsletterForm = document.getElementById('newsletterForm');
-if (newsletterForm) {
-    newsletterForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const email = this.querySelector('input[type="email"]').value;
-        
-        if (email) {
-            console.log('البريد الإلكتروني المشترك:', email);
-            showSuccessMessage('شكراً لاشتراكك! تحقق من بريدك الإلكتروني.');
-            newsletterForm.reset();
-        }
+const contactFormStatus = document.getElementById('contactFormStatus');
+const newsletterStatus = document.getElementById('newsletterStatus');
+
+const FORM_ENDPOINTS = {
+    contact: 'https://formspree.io/f/mqkrvgrj',
+    newsletter: 'https://formspree.io/f/mbjnkban'
+};
+
+async function submitJSONForm(url, payload) {
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
     });
+
+    if (!response.ok) {
+        throw new Error('تعذر إرسال البيانات إلى الخادم');
+    }
+
+    return response.json().catch(() => ({}));
 }
 
-// ===== دالة عرض رسالة النجاح =====
-function showSuccessMessage(message) {
-    const messageDiv = document.createElement('div');
-    messageDiv.className = 'success-message';
-    messageDiv.textContent = message;
-    messageDiv.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background-color: #27AE60;
-        color: white;
-        padding: 15px 25px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        z-index: 10000;
-        animation: slideInRight 0.5s ease;
-        font-weight: 600;
-    `;
-    
-    document.body.appendChild(messageDiv);
-    
-    // إزالة الرسالة بعد 5 ثوان
-    setTimeout(() => {
-        messageDiv.style.animation = 'slideOutRight 0.5s ease';
-        setTimeout(() => messageDiv.remove(), 500);
-    }, 5000);
-}
-
-// ===== دالة عرض رسالة الخطأ =====
-function showErrorMessage(message) {
-    const messageDiv = document.createElement('div');
-    messageDiv.className = 'error-message';
-    messageDiv.textContent = message;
-    messageDiv.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background-color: #E74C3C;
-        color: white;
-        padding: 15px 25px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        z-index: 10000;
-        animation: slideInRight 0.5s ease;
-        font-weight: 600;
-    `;
-    
-    document.body.appendChild(messageDiv);
-    
-    // إزالة الرسالة بعد 5 ثوان
-    setTimeout(() => {
-        messageDiv.style.animation = 'slideOutRight 0.5s ease';
-        setTimeout(() => messageDiv.remove(), 500);
-    }, 5000);
+function setFormStatus(element, message, state = 'info') {
+    if (!element) return;
+    element.textContent = message;
+    element.dataset.state = state;
 }
 
 // ===== تأثير التمرير الناعم (Smooth Scroll) =====
@@ -379,14 +339,49 @@ function showToast(message, type = 'success') {
     }, 4000);
 }
 
-// تعديل وظيفة نماذج التواصل لاستخدام Toast Notifications
+// ===== معالجة نموذج التواصل =====
+if (contactForm) {
+    contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        setFormStatus(contactFormStatus, 'جاري إرسال طلبك...', 'loading');
 
+        const formData = new FormData(contactForm);
+        const payload = Object.fromEntries(formData.entries());
+        payload.form = 'contact';
+
+        try {
+            await submitJSONForm(FORM_ENDPOINTS.contact, payload);
+            showToast('تم استلام طلبك بنجاح، سنتواصل معك قريباً.', 'success');
+            setFormStatus(contactFormStatus, 'وصلنا طلبك، تفقد بريدك خلال ساعات.', 'success');
+            contactForm.reset();
+        } catch (error) {
+            console.error(error);
+            showToast('حدث خطأ أثناء الإرسال، حاول مرة أخرى.', 'error');
+            setFormStatus(contactFormStatus, 'حدث خطأ في الاتصال، يرجى المحاولة مجدداً.', 'error');
+        }
+    });
+}
+
+// ===== معالجة نموذج النشرة البريدية =====
 if (newsletterForm) {
-    newsletterForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        // بدلاً من التحويل لصفحة الشكر، نعرض رسالة منبثقة
-        showToast('شكراً لاشتراكك! سنتواصل معك قريباً.', 'success');
-        newsletterForm.reset(); // مسح النموذج بعد النجاح
+    newsletterForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        setFormStatus(newsletterStatus, 'يتم حفظ بريدك...', 'loading');
+
+        const formData = new FormData(newsletterForm);
+        const payload = Object.fromEntries(formData.entries());
+        payload.form = 'newsletter';
+
+        try {
+            await submitJSONForm(FORM_ENDPOINTS.newsletter, payload);
+            showToast('مرحباً بك! ستصلك رسالة التأكيد خلال دقائق.', 'success');
+            setFormStatus(newsletterStatus, 'تم الاشتراك بنجاح ✅', 'success');
+            newsletterForm.reset();
+        } catch (error) {
+            console.error(error);
+            showToast('تعذر الاشتراك حالياً، حاول لاحقاً.', 'error');
+            setFormStatus(newsletterStatus, 'لم نتمكن من حفظ بريدك، حاول مرة أخرى.', 'error');
+        }
     });
 }
 

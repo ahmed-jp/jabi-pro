@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="قائمة فحص عملية لضمان أداء المواقع قبل إطلاقها للجمهور.">
+    <title>قائمة فحص أداء المواقع - JABI</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .post-container { padding: 100px 0 60px; max-width: 900px; margin: 0 auto; line-height: 1.9; }
+        .post-header h1 { font-size: 38px; color: var(--accent-color); }
+        .post-meta { font-size: 14px; color: var(--text-light); margin-bottom: 25px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; }
+        .checklist { list-style: none; padding: 0; }
+        .checklist li { margin-bottom: 20px; padding: 20px; border-radius: 12px; background: var(--secondary-color); box-shadow: var(--shadow); }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text">JABI <span class="logo-subtitle">تصميم ويب احترافي</span></span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><button id="darkModeToggle" class="nav-link dark-mode-nav-btn" title="الوضع الداكن/الفاتح">🌙</button></li>
+                    <li><a href="../index.html#hero" class="nav-link">الرئيسية</a></li>
+                    <li><a href="../index.html#about" class="nav-link">من نحن</a></li>
+                    <li><a href="../index.html#services" class="nav-link">الخدمات</a></li>
+                    <li><a href="../index.html#why-us" class="nav-link">لماذا نحن</a></li>
+                    <li><a href="../blog.html" class="nav-link">المدونة</a></li>
+                    <li><a href="../index.html#contact" class="nav-link">تواصل معنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container post-container">
+        <div class="post-header">
+            <h1>قائمة فحص أداء المواقع قبل الإطلاق</h1>
+            <p class="post-meta">نُشر بتاريخ 20 مارس 2025 بواسطة فريق التطوير في JABI</p>
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?auto=format&fit=crop&w=1200&q=80" alt="لوحة قياس أداء" class="post-image" loading="lazy">
+
+        <div class="post-content">
+            <p>قبل أن تضغط زر الإطلاق، ننفذ في JABI سلسلة من الاختبارات القياسية التي تكشف أي عنق زجاجة قد يعيق الأداء. يمكنك تطبيق القائمة التالية خطوة بخطوة لضمان حصول زوارك على تجربة سريعة ومستقرة.</p>
+
+            <ol class="checklist">
+                <li>
+                    <strong>تهيئة الصور والملفات الثابتة:</strong>
+                    <p>تأكد من ضغط الصور باستخدام WebP أو AVIF، وتفعيل خاصية <code>loading="lazy"</code> لكل الصور أسفل خط الطي. قم بدمج الأيقونات في Sprite أو استخدم مكتبة SVG لتقليل عدد الطلبات.</p>
+                </li>
+                <li>
+                    <strong>مراجعة الشبكة الأمامية (Front-end Network):</strong>
+                    <p>فعّل HTTP/2 أو HTTP/3، واستخدم CDN قريب من جمهورك. راجع رؤوس التخزين المؤقت Cache-Control وتأكد من أن الملفات الثابتة تحصل على صلاحية طويلة.</p>
+                </li>
+                <li>
+                    <strong>تقليل JavaScript غير الضروري:</strong>
+                    <p>قم بفصل الأكواد الخاصة بالصفحات الداخلية عن الصفحة الرئيسية، وفعّل التحميل المؤجل للأكواد غير الحرجة. الهدف ألا يتجاوز حجم ملفات JS الأولية 150 كيلوبايت مضغوط.</p>
+                </li>
+                <li>
+                    <strong>متابعة مؤشرات Core Web Vitals:</strong>
+                    <p>استخدم أداة Lighthouse لرصد LCP و CLS و INP. أي نتيجة أقل من 90 تستوجب فتح بطاقة عمل لتحسين العنصر المعني (صورة البطاقة، فونت خارجي، أو عنصر متحرك).</p>
+                </li>
+                <li>
+                    <strong>اختبار التحمل على الخادم:</strong>
+                    <p>نفّذ اختبار تحميل بسيط باستخدام k6 أو Gatling للتأكد من أن الخادم يحتمل 2x من متوسط الزيارات المتوقعة. راقب استخدام الذاكرة ونسبة الخطأ في الطلبات.</p>
+                </li>
+                <li>
+                    <strong>خطة المراقبة بعد الإطلاق:</strong>
+                    <p>أضف تنبيهات في Google Analytics و UptimeRobot لأي ارتفاع مفاجئ في زمن الاستجابة. وجود لوحة مراقبة واضحة يوفر عليك ساعات من البحث أثناء الطوارئ.</p>
+                </li>
+            </ol>
+
+            <p>احتفظ بهذه القائمة وخصصها لكل مشروع. إذا رغبت في تنفيذ تدقيق أداء شامل مع فريقنا، فيسعدنا البدء خلال ثلاثة أيام عمل.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>JABI</h4>
+                    <p>شريكك نحو التميز الرقمي</p>
+                </div>
+                <div class="footer-section">
+                    <h4>الروابط السريعة</h4>
+                    <ul>
+                        <li><a href="../index.html#hero">الرئيسية</a></li>
+                        <li><a href="../index.html#about">من نحن</a></li>
+                        <li><a href="../index.html#services">الخدمات</a></li>
+                        <li><a href="../index.html#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>تابعنا</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" title="فيسبوك"><img src="../icons/Facebook.png" alt="فيسبوك"></a>
+                        <a href="#" class="social-icon" title="تويتر"><img src="../icons/X.png" alt="تويتر"></a>
+                        <a href="#" class="social-icon" title="إنستاجرام"><img src="../icons/Instagram.png" alt="إنستاجرام"></a>
+                        <a href="#" class="social-icon" title="لينكدإن"><img src="../icons/LinkedIn.png" alt="لينكدإن"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 <strong>JABI</strong> جميع الحقوق محفوظة </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
