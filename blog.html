@@ -33,10 +33,12 @@
         }
         .post-card {
             background-color: var(--primary-color);
-            border-radius: 12px;
+            border-radius: 16px;
             box-shadow: var(--shadow);
             overflow: hidden;
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
         }
         .post-card:hover {
             transform: translateY(-5px);
@@ -44,16 +46,14 @@
         }
         .post-card-image {
             width: 100%;
-            height: 200px;
-            background-color: var(--border-color); /* صورة وهمية */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: var(--text-light);
+            height: 220px;
+            object-fit: cover;
         }
         .post-card-content {
             padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
         .post-card-content h3 {
             font-size: 20px;
@@ -65,7 +65,13 @@
             font-size: 14px;
             color: var(--text-light);
             line-height: 1.6;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+        .post-card-meta {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 12px;
         }
         .read-more {
             color: var(--accent-color);
@@ -110,31 +116,37 @@
     <!-- ===== شبكة المقالات (Blog Grid) ===== -->
     <section class="blog-section">
         <div class="container">
-            <div class="blog-post">
-                    <a href="post-template.html" class="post-link">
-                <!-- مقالة وهمية 1 -->
-                <div class="post-card">
-                    <div class="post-card-image">صورة المقالة 1</div>
+            <div class="blog-grid">
+                <article class="post-card">
+                    <img src="https://images.unsplash.com/photo-1522199873717-bc0b5132045a?auto=format&fit=crop&w=900&q=80" alt="مصمم يعمل على شاشات متعددة" class="post-card-image" loading="lazy">
                     <div class="post-card-content">
-                        <h3>أهمية التصميم المتجاوب لموقعك</h3>
-                        <p>في عصر الهواتف الذكية، لم يعد التصميم المتجاوب خياراً بل ضرورة. تعرف على كيفية تأثيره على تجربة المستخدم وتصنيف موقعك في محركات البحث.</p>
-                        <a href="post-template.html" class="read-more">اقرأ المزيد</a>
+                        <div class="post-card-meta">15 يناير 2025 • 7 دقائق قراءة</div>
+                        <h3>10 خطوات عملية لتحويل موقعك إلى تصميم متجاوب بالكامل</h3>
+                        <p>جمعنا لك قائمة تحقق تغطي الشبكات المرنة، نقاط التوقف الذكية، واختبارات الأداء للتأكد من أن تجربة المستخدم سلسة على الهواتف، الأجهزة اللوحية، والحواسيب المكتبية.</p>
+                        <a href="posts/responsive-design.html" class="read-more">اقرأ الدراسة كاملة</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- مقالة وهمية 2 -->
-                <div class="post-card">
-                    <div class="post-card-image">صورة المقالة 2</div>
+                <article class="post-card">
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=900&q=80" alt="لوحة ألوان" class="post-card-image" loading="lazy">
                     <div class="post-card-content">
-                        <h3>كيف تختار الألوان المناسبة لعلامتك التجارية؟</h3>
-                        <p>الألوان هي لغة المشاعر. اكتشف سيكولوجية الألوان وكيف يمكن لمزيج الألوان الهادئ أن يعكس احترافية شركتك ويجذب العملاء.</p>
-                        <a href="post-template.html" class="read-more">اقرأ المزيد</a>
+                        <div class="post-card-meta">3 فبراير 2025 • 5 دقائق قراءة</div>
+                        <h3>دليل الألوان للعلامة التجارية في 2025</h3>
+                        <p>تعرّف على كيفية بناء نظام ألوان متكامل يدعم هوية شركتك، مع أمثلة على لوحات حديثة، ونصائح لاختيار التباينات المناسبة للوضعين الفاتح والداكن.</p>
+                        <a href="posts/brand-colors.html" class="read-more">ابدأ في تحسين هويتك</a>
                     </div>
-                </div>
+                </article>
 
-                
+                <article class="post-card">
+                    <img src="https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?auto=format&fit=crop&w=900&q=80" alt="مطور يراقب أداء موقع" class="post-card-image" loading="lazy">
+                    <div class="post-card-content">
+                        <div class="post-card-meta">20 مارس 2025 • 8 دقائق قراءة</div>
+                        <h3>قائمة فحص أداء المواقع قبل الإطلاق</h3>
+                        <p>من ضغط الصور وتهيئة الـHTTP/2 إلى إعداد التخزين المؤقت و Core Web Vitals، هذه القائمة تضمن أن يكون إطلاق موقعك ثابتاً وسريعاً منذ اليوم الأول.</p>
+                        <a href="posts/performance-checklist.html" class="read-more">اطلع على قائمة الفحص</a>
+                    </div>
+                </article>
             </div>
-            <!-- يمكن إضافة المزيد من المقالات هنا -->
         </div>
     </section>
 

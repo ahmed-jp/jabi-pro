@@ -7,7 +7,44 @@
     <meta name="keywords" content="تصميم مواقع, ويب ديزاين, HTML, CSS, شركات محلية">
     <title>JABI - تصميم مواقع احترافية</title>
     <script type="application/ld+json">
-   
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "JABI",
+        "url": "https://jabi.sa",
+        "logo": "https://jabi.sa/icons/maskable_icon_x512.png",
+        "image": "https://jabi.sa/cover.jpg",
+        "description": "JABI وكالة سعودية متخصصة في تصميم واجهات مواقع HTML و CSS مخصصة للشركات المحلية.",
+        "telephone": "+966573781148",
+        "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "السعودية ودول الخليج"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "SA",
+            "addressLocality": "الرياض",
+            "addressRegion": "منطقة الرياض"
+        },
+        "sameAs": [
+            "https://www.facebook.com/jabi", 
+            "https://www.instagram.com/jabi",
+            "https://www.linkedin.com/company/jabi"
+        ],
+        "makesOffer": [{
+            "@type": "Offer",
+            "name": "باقة تصميم صفحة واحدة",
+            "price": "1500.00",
+            "priceCurrency": "SAR",
+            "availability": "https://schema.org/InStock"
+        }, {
+            "@type": "Offer",
+            "name": "باقة تصميم متعددة الصفحات",
+            "price": "3750.00",
+            "priceCurrency": "SAR",
+            "availability": "https://schema.org/InStock"
+        }]
+    }
     </script>
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="./styles.css">
@@ -263,15 +300,54 @@
             <div class="contact-wrapper">
                 <div class="contact-content">
                     <div class="section-header">
-                        <h2>تواصل <strong>مباشر</strong> عبر واتساب</h2>
-                        <p class="section-subtitle">للتواصل السريع والاستفسارات، اضغط على الزر أدناه لبدء محادثة واتساب.</p>
+                        <h2>نتشرف بسماع تفاصيل مشروعك</h2>
+                        <p class="section-subtitle">أرسل لنا المعلومات الأساسية وسنعاود الاتصال بك خلال أقل من 24 ساعة.</p>
                         <div class="underline"></div>
                     </div>
 
-                    <div class="whatsapp-contact-box">
-                        <a href="https://wa.me/966573781148?text=مرحباً،%20أود%20الاستفسار%20عن%20خدماتكم%20في%20تصميم%20المواقع." target="_blank" class="btn btn-whatsapp">
-                            <i class="fab fa-whatsapp"></i> تواصل عبر واتساب
-                        </a>
+                    <div class="contact-meta">
+                        <p>📧 <a href="mailto:hello@jabi.sa">hello@jabi.sa</a></p>
+                        <p>📱 <a href="tel:+966573781148">+966 57 378 1148</a></p>
+                        <p>⏰ أوقات العمل: الأحد - الخميس | 9 ص - 6 م</p>
+                    </div>
+
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="fullName">الاسم الكامل</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="اكتب اسمك" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">البريد الإلكتروني</label>
+                                <input type="email" id="email" name="email" placeholder="name@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">رقم الجوال</label>
+                                <input type="tel" id="phone" name="phone" placeholder="05xxxxxxxx" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectType">نوع المشروع</label>
+                            <select id="projectType" name="projectType" required>
+                                <option value="" disabled selected>اختر نوع المشروع</option>
+                                <option value="landing">صفحة هبوط</option>
+                                <option value="website">موقع تعريفي متعدد الصفحات</option>
+                                <option value="store">متجر إلكتروني بسيط</option>
+                                <option value="other">أخرى</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">وصف المشروع</label>
+                            <textarea id="message" name="message" placeholder="صف احتياجاتك، الهدف من الموقع، والمحتويات المتوفرة" required></textarea>
+                        </div>
+                        <p class="form-note">جميع البيانات تنتقل عبر اتصال HTTPS وتُستخدم فقط للرد على استفسارك.</p>
+                        <button type="submit" class="cta-button">إرسال الطلب</button>
+                        <p class="form-status" id="contactFormStatus" aria-live="polite"></p>
+                    </form>
+
+                    <div class="contact-actions">
+                        <a href="https://wa.me/966573781148?text=مرحباً،%20أود%20الاستفسار%20عن%20خدماتكم%20في%20تصميم%20المواقع." target="_blank" class="btn btn-whatsapp">تواصل سريع عبر واتساب</a>
+                        <a href="tel:+966573781148" class="btn btn-outline">اتصل بنا الآن</a>
                     </div>
                 </div>
 
@@ -279,10 +355,13 @@
                 <div class="newsletter-section">
                     <h3>اشترك في نشرتنا البريدية</h3>
                     <p>احصل على أحدث نصائح التصميم والتسويق الرقمي مباشرة في بريدك الوارد</p>
-                    <form class="newsletter-form" id="newsletterForm" action="thank-you.html">
-                        <input type="email" placeholder="أدخل بريدك الإلكتروني" required>
+                    <form class="newsletter-form" id="newsletterForm" novalidate>
+                        <label for="newsletterEmail" class="sr-only">البريد الإلكتروني</label>
+                        <input type="email" id="newsletterEmail" name="email" placeholder="أدخل بريدك الإلكتروني" required>
                         <button type="submit" class="newsletter-btn">اشترك</button>
+                        <p class="form-status" id="newsletterStatus" aria-live="polite"></p>
                     </form>
+                    <small class="form-note">نرسل رسالة واحدة أسبوعياً ويمكنك إلغاء الاشتراك في أي وقت.</small>
                 </div>
             </div>
         </div>
